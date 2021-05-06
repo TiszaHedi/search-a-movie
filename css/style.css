@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #39354f;
+  --secondary-color: #515076;
+  --primary-font-color: #aea9cc;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+  font-family: 'Oswald', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Electrolize', sans-serif;
+}
+
+/* HEADER */
+header {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem;
+}
+
+  header a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+  }
+
+  form {
+    position: relative;
+    margin-top: 1rem;
+  }
+
+    #search {
+      background-color: transparent;
+      font-size: 16px;
+      border: 1px solid var(--primary-color);
+      min-width: 250px;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: var(--primary-font-color);
+      outline: none;
+    }
+
+    #search::placeholder {
+      color: var(--primary-font-color);
+    }
+
+    #search::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      background-color: transparent;
+      border: 0;
+      color: inherit;
+    }
+
+@media(max-width: 550px) {
+  header {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+/* MAIN */
+main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+  .movie {
+    width: 300px;
+    height: 500px;
+    margin: 3rem 1rem 1rem;
+    background-color: transparent;
+    perspective: 2000px;
+  }
+
+    .movie img {
+      width: 100%;
+      height: 400px;
+      -webkit-mask-image: linear-gradient(to top, transparent 5%, black);
+      -o-mask-image: linear-gradient(to top, transparent 5%, black);
+      -moz-mask-image: linear-gradient(to top, transparent 5%, black);
+      mask-image: linear-gradient(to top, transparent 5%, black);
+      border-radius: 10px 10px 0 0;
+    }
+
+
+    .movie-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align: left;
+      height: 18%;
+      padding: 10px;
+    }
+
+    .movie h3 {
+      font-size: 20px;
+    }
+
+    .movie .movie-average {
+      font-weight: bold;
+      background-color: var(--secondary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+    }
+
+
+    .green { color: #69b34c; } 
+
+    .orange { color: #fab733; }
+
+    .red { color: #ff0d0d;  }
+    
+
+
+
+/*https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+
+.movie-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+
+.movie:hover .movie-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.movie-card-front,
+.movie-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.movie-card-back {
+  transform: rotateY(180deg);
+  background-color: var(--secondary-color);
+  padding: 20px;
+  line-height: 2;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
