@@ -38,14 +38,14 @@ header {
 
   form {
     position: relative;
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
 
     #search {
       background-color: transparent;
       font-size: 16px;
       border: 1px solid var(--primary-color);
-      min-width: 250px;
+      min-width: 350px;
       padding: 0.5rem 1rem;
       border-radius: 20px;
       color: var(--primary-font-color);
@@ -71,7 +71,7 @@ header {
       color: inherit;
     }
 
-@media(max-width: 550px) {
+@media(max-width: 650px) {
   header {
     flex-direction: column;
     justify-content: space-evenly;
@@ -104,6 +104,7 @@ main {
       -moz-mask-image: linear-gradient(to top, transparent 5%, black);
       mask-image: linear-gradient(to top, transparent 5%, black);
       border-radius: 10px 10px 0 0;
+      object-fit: contain;
     }
 
 
@@ -125,6 +126,7 @@ main {
       background-color: var(--secondary-color);
       padding: 0.5rem 1rem;
       border-radius: 50%;
+      margin-left: 2rem;
     }
 
 
@@ -169,10 +171,11 @@ main {
   transform: rotateY(180deg);
   background-color: var(--secondary-color);
   padding: 20px;
-  line-height: 2;
+  line-height: 1.5;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  font-size: 15px;
 }
-

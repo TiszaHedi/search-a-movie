@@ -43,7 +43,7 @@ function renderMovies(movies) {
                         </div>
                     </div>
                     <div class="movie-card-back">
-                        ${movie.overview}
+                        ${movie.overview === '' ? 'Feltöltés alatt...' : movie.overview}
                     </div>
                 </div>
             </div>
